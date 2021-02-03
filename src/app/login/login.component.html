@@ -1,0 +1,29 @@
+<!--<div class="row m-0 w-100 p-0 navBackGround" *ngIf="logedIn !='loggedin success'">
+  <div class="col-12">
+      <ul>
+          <li><a routerLink="/login">login</a></li>
+          <li><a routerLink="/registration">registration</a></li>
+      </ul>
+  </div>
+</div>-->
+<div class="container">
+    <div class="row">
+        <div class="col-9"></div>
+        <div class="col-3">
+            <h5 style="text-align:center">Customer Login</h5>
+            <p>{{wrong}}</p>
+            <form [formGroup]="loginform">
+                <div class="form-group">
+                  <label for="email">Email address:</label>
+                  <input type="email" class="form-control" placeholder="Enter email" id="email" formControlName="email">
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Password:</label>
+                  <input type="password" class="form-control" placeholder="Enter password" id="pwd" formControlName="password">
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]=!loginform.valid (click)="onSubmit()">Submit</button>&nbsp;
+                <button type="submit" class="btn btn-primary" [disabled]=!loginform.valid (click)="onRegister()">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
